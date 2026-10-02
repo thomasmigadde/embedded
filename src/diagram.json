@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "author": "ESP32 Smart Fridge System",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-s3-devkitc-1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led_green",
+      "top": -80,
+      "left": 180,
+      "attrs": { "color": "green", "label": "Fridge ON" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_red",
+      "top": 20,
+      "left": 180,
+      "attrs": { "color": "red", "label": "Fridge OFF" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_orange",
+      "top": 120,
+      "left": 180,
+      "attrs": { "color": "orange", "label": "Alarm / Paybill" }
+    },
+    { "type": "wokwi-resistor", "id": "r1", "top": -45, "left": 110, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r2", "top": 55, "left": 110, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r3", "top": 155, "left": 110, "attrs": { "value": "220" } }
+  ],
+  "connections": [
+    [ "esp:GND.1", "led_green:C", "black", [ "v0" ] ],
+    [ "esp:GND.1", "led_red:C", "black", [ "v0" ] ],
+    [ "esp:GND.1", "led_orange:C", "black", [ "v0" ] ],
+    [ "esp:18", "r1:1", "green", [ "h0" ] ],
+    [ "r1:2", "led_green:A", "green", [ "h0" ] ],
+    [ "esp:19", "r2:1", "red", [ "h0" ] ],
+    [ "r2:2", "led_red:A", "red", [ "h0" ] ],
+    [ "esp:21", "r3:1", "orange", [ "h0" ] ],
+    [ "r3:2", "led_orange:A", "orange", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}

@@ -1,0 +1,5 @@
+[wokwi]
+version = 1
+firmware = ".pio/build/esp32s3camlcd/firmware.bin"
+elf = ".pio/build/esp32s3camlcd/firmware.elf"
+diagram = "src/diagram.json"
